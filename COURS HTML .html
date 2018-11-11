@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>	Git Hub --> poster le site en ligne	
+<Head>
+	<meta charset="utf-8" name="Title" content="Description" />
+	<h1>...</h1>
+</head>
+<body>
+	<h2>...</h2>
+		<p>...</p>
+		<p style="text-align: ...;background: ...;color: ...;"></p>
+		(text-align: left/right/center/justify)(background/color: blue/red/green...)
+		<strong>gras</strong>
+		<b>gras</b>
+		<em>italique</em>
+		<i>italique</i>
+		<mark>surligner</mark>
+		<ul>titre liste à puces
+			<li>puce</li>
+			<li>puce</li>
+			<li>puce</li>
+		</ul>
+		<ol>titre liste numérotée
+			<li>1/...</li>
+			<li>2/...</li>
+			<li>3/...</li>
+		</ol>
+</body>
+
+
+
+
+
+Lien externe							<a href="https://www.X.com">lien externe ou interne</a>
+Lien interne							<a href="#mot">le lien cliquable précédemment vous amène ici</a>
+										[...]
+										<a id="mot">poser une ancre sur un mot pour un lien interne sur la même page (ex: sommaire)</a>
+Ouverture lien nouvelle fenêtre			<a href="https.www.site.com" target="_blank">Site</a>
+Envoyer email							<a href="mailto:kester06@hotmail.fr">Nous contacter</a>
+Télécharger fichier						<a href="fichier.zip">Télécharger le fichier</a>
+
+
+
+
+
+INCORPORER DU CSS, 3 POSSIBILITÉS:
+1) Par paragraphe:				<p style="color: blue";>							(Se place dans la balise paragraphe)
+2) Par page:
+							<head>
+								<style>												(Se place dans la balise <head></head>)
+								p
+									{
+										color: blue;
+									}
+
+									.blue {
+									color: blue;
+							}
+								</style>
+							</head>
+							<body>
+								<p>[...]</p>										--> Ce p sera bleu, comme tous les p
+								<p class="blue">[...]</p>							--> Ce p sera bleu car on a défini la classe
+							</body>														(id s'utilise avec #, comme classe s'utilise avec .)
+3) Pour plusieurs pages:		<link rel="stylesheet" href="fichier.css" />			(Se place dans la balise <head></head>)
+								p													(Se place dans un autre fichier nommé en .css)
+									{
+										color: blue;
+									}
+h1, p {color: blue;}			--> Affecte plusieurs styles de zones de texte (ici les h1 et p)
+h1 + p {color: blue;}			--> Affecte les h1 et le premier paragraphe
+* {color: blue;}				--> Affecte toutes les balises de la page
+.introduction {color: blue;} 	--> Affecte tous les texte sous forme class="introduction"
+p.center {color: blue;}			--> Affecte tous les paragraphes portant la classe center
+article > p {color: blue;}		--> Affecte les p contenus dans les articles (lien de parenté direct)
+article > .introduction
+h1 em {color: blue;}			--> Affecte tous les em compris dans des h1 (lien de parenté direct ou indirect)
+.highlight.mainpoint			--> Affecte tous les éléments contenant les classes highlight et mainpoint
+
+
+
+
+
+<span>N'affecte qu'une partie d'une zone de texte, comme strong ou em...</span> --> <span class="introduction">...</span>
+<div>Affecte un paragraphe</div>		Span = balise intraligne / Div = balise bloc
+
+
+
+
+
+FORMATAGE DU TEXTE
+p {font-size: 14px;}									--> Taille texte
+p {font-famili: arial, arial black, impact;}			--> Police texte (sélectionne la première que l'ordinateur possède, dans l'ordre d'écriture)
+p {font-style: italic;}									--> Italique
+p {font-weight: bold;}									--> Gras
+p {text-decoration: underline;}							--> Souligner
+p {text-decoration: overline;}							--> Ligne au dessus du texte
+p {text-decoration: line-through;}						--> Texte rayé
+p {text-decoration: none;}								--> Enlever le soulignement d'un lien par exemple
+p {text-align: left/right/center/justify;}				--> Alignement du texte
+
+.image1 {float: left/right;}							--> Incorpore l'image dans le texte
+.paragraphe2 {clear: left/right/both;}					--> Empêche l'image d'être incorporée dans le texte du 2e paragraphe
+
+
+
+
+
+COULEUR ET FOND
+p{ color: blue;}										--> Couleur nommée
+p{color: #FFFFFF;}										--> Couleur précise (paire de caractères allant de 0 à F, RRVVBB)
+p{color: rgb(255,255,255);}								--> Couleur précise (nombres allant de 0 à 255 RVB)
+p{background-color: blue}								--> Couleur du fond (peut s'appliquer à body pour colorer la page)
+p{background-image: url("image/photo.jpg");}			--> Image en fond
+p{background-attachment: fixed;}						--> Le fond ne se déroule pas lorsque l'on descend la page
+p{background-repeat: no-repeat;}						--> Le fond ne répète pas l'image plusieurs fois
+p{background-position: top right}						--> Placer le fond où on veut sur la page (ici en haut à droite)
+p{opacity: 1;}											--> Jouer sur la transparence (allant de 0 à 1)
+p{color: rgba(255,255,255,0.5)}							--> Rouge Vert Bleu Transparence
+
+
+
+
+
+BORDURE ET OMBRE
+h2
+{
+	border: 3px blue solid;								--> Encadrement de largeur 3 pixels de couleur bleue et continue (solid/dotted/dashed/double/groove/ridge/inset/outset)
+	border-left: 3px blue solid; 						--> Bordure que sur un des 4 cotés (left/right/top/bottom)
+	border-radius: 20px; 								--> Encadrement arrondie
+	border-radius: 20px / 10px;  						--> Encadrement éliptyque
+	border-collapse: collapse;							--> Enlever des bordures
+	box-shadow: 6px 6px 0px black;						--> Ajouter une ombre sur le cadre(décalage horizontal, décalage vertical, adoucicement du dégradé, couleur de l'ombre)
+	text-shadow: 6px 6px 10px black;					--> Ajouter une ombre sur le texte
+}
+
+
+
+
+
+APPARENCE DYNAMIQUE
+a:link {color: blue}									--> Change la couleur d'un lien non visité
+a:visited{color: purple;}								--> Change la couleur d'un lien déjà visité
+a:hover {color: green;}									--> Change la couleur des liens au survol de la souris
+	p:hover{border-left: 3px blue solid;}				--> Ajoute une bordure bleue à gauche du paragraphe au survol de la souris
+a:active{color: red;}									--> Change la couleur des liens au clic (ne fonctionne que sur les liens)
+input:focus{background-color: green;}					--> Change la couleur d'une zone à remplir (du type questionnaire)
+cursor: pointer;										--> Change la souris en "main"
+
+header li:nth-child(3)									nom:n°-ligne(n°)
+header li:nth-child(odd)								impair
+
+
+
+
+
+STRUCTURE
+<header>												--> En-tête de page-break-after
+<footer>												--> Pied de page
+<nav>													--> Menu de navigation
+<section>												--> Morceau de la page
+<article>												--> Article indépendant
+<aside>													--> Bloc d'informations complémentaires au texte
+
+
+
+
+
+MODELE BOITE
+Balise bloc: occupe par défaut tout l'espace en largeur (ex: titre, div, paragraphe...). On peutinsérer une balise bloc dans une autre balise bloc. Elle a une largeur et une hauteur.
+Balise inline: se retrouve à l'intérieur d'une ligne (ex: strong, em, span, a, img...).
+
+Bloc:
+h1{
+	width: 50%/500px;									--> Donner une largeur au bloc (en % ou en px) 
+	height: ;											--> Donner une hauteur au bloc (en % ou en px)
+	min-width: ;										--> Largeur minimale
+	max-width: ;										--> Largeur maximale
+	min-height: ;										--> Hauteur minimale
+	max-height: ;										--> Hauteur maximale
+	
+	margin: 50px;										--> Marge extérieure (qui sépare les éléments entre eux)
+	padding: 50px;										--> Marge intérieure (qui sépare un élément de sa bordure)
+	margin/paddind-left/right/top/bottom				--> Personnaliser les espaces
+	margin: 2px 4px 6px 8px;							--> Ordre respectif haut/droite/bas/gauche
+	margin-auto;										--> Centre le bloc sur la page (nécessite de donner une largeur au bloc)
+	
+	En cas de texte > encadrement:
+	overflow:visible;									--> Le texte déborde du cadre
+	overflow: hidden;									--> Le texte est coupé arrivé au cadre
+	overflow: scroll;									--> Le texte est coupé mais peut être défilé
+	Overflow:auto;										--> Le navigateur décide (le plus souvent agit comme scroll)
+	En cas de long mot (ex: url):
+	word-wrap: break-word;								--> Force le mot à se couper et aller à la ligne pour ne pas sortir du cadre
+	}
+
+	
+	
+	
+
+TABLEAUX	
+<table>												
+	<caption>Titre du tableau</caption>					--> Balise titre de tableau (caption-side: top)
+		<tr>											
+			<th>Titre colonne 1</th>					--> Balise titre d'une ligne
+			<th>Titre colonne 2</th>
+			<th>Titre colonne 3</th>
+		</tr>
+		<tr>											--> Balise ligne de tableau
+			<td>A1</td>									--> Balise cellule d'une ligne
+			<td>A2</td>
+			<td>A3</td>
+		</tr>
+		<tr>
+			<td>B1</td>
+			<td>B2</td>
+			<td>B3</td>
+		</tr>
+</table>
+	
+<table>
+	<thead><tr><th></th></tr></thead>					--> Balise en-tête de tableau
+	<tbody><tr><th></th></tr></tbody>					--> Balise corps de tableau
+	<tfoot><tr><th></th></tr></tfoot>					--> Balise pied de tableau
+</table>
+	<td colspan="2"></td>								--> Fusion de 2 colones (2 cellules horizontales)
+	<td rowspan="2"></td>								--> Fusion de 2 lignes (2 cellules verticales)
+
+	
+
+
+
+FORMULAIRES
+<form method="post" action="traitement.php">			--> Écrire un formulaire
+	<p>
+		<label for="pseudo">Votre pseudo:</label>
+		<input type="text" name="pseudo" id="pseudo" />	
+		
+		<br />
+		<label for="pass">Votre mot de passe:</label>
+		<input type="password" name="pass" id="pass" />	
+	</p>
+</form>
+
+		<label> 	--> Titre de la zone de texte
+		<input /> 	--> Formulaire monoligne
+		type 		--> Ce que l'on veut entrer (ici du texte)	type="text" type="password"
+		name 		--> Nom de la zone de texte
+		id 			--> Nom de la zone de texte (name et id peuvent être identiques)
+		for 		--> Lier le label au champ (même valeur que l'id)
+
+		Attribus de input:
+size (agrandir le champ)
+maxlength (limiter le nombre de caractères)
+value (pré-remplir le champ avec une valeur par défaut)
+placeholder (indication, qui disparaitra au moindre click)
+
+
+
+
+
+<textarea></textarea>	--> Formulaire multilignes
+width					--> Agrandir la largeur
+height					--> Agrandir la largeur
+Ou
+
+rows					--> Nombre de lignes
+cols					--> Nombre de colonnes
+<>[...]</>				--> Texte par défaut, on n'utilise plus le value="[...]"
+
+type="text"
+type="password"
+type="email"
+type="url"
+type="tel"
+type="number"
+	min 				--> Valeur minimale
+	max 				--> Valeur maximale
+	step 				--> Écart entre chaque valeur saisissable
+type="range"			--> Affiche un curseur au lieu d'une saisie
+	min
+	max
+	step
+type="color"			--> Saisir une couleur
+type="date"				--> Saisir une date
+type="time"				--> Saisir une heure
+type="datetime"			--> Saisir une date et heure (avec gestion du décalage horaire)
+type="datetime-local"	--> Saisir une date et heure (sans gestion du décalage horaire)
+type="week"
+type="month"
+type="search"
+type="checkbox"
+
+
+
+
+
+<input type="checkbox" name="choix" checked /> 						--> Attribut checked coche la case par défaut
+type="radio"														--> QCM (une seule réponse cochable, sauf si l'on enlève l'attribut name)
+<input type="radio" name="age" value="moins15" id="moins15" />		--> Attribut value dépend d'une option, tendis que l'attribut name dépend de la question (donc commun à toutes les réponses d'une question)
+<label for="moins15"> Moins de 15 ans</label><br />
+
+<input type="radio" name="age" value="15-25" id="15-25" />
+<label for="15-25">15-25 ans</label><br />
+
+
+
+
+
+<form method="post" action="traitement.php">
+	<p>
+		<label for="pays">Dans quel pays habitez-vous ?</label><br />
+		<select name="pays" id="pais">
+			<optgroup label="Europe">									--> Catégoriser les réponses, un titre apparait en gras
+				<option value="france" selected>France</option>			--> selected sélectionne cette valeur par défaut
+				<option value="espagne">Espagne</option>
+				<option value="italie">Italie</option>
+				<option value="angleterre">Angleterre</option>
+			</optgroup>
+		</select>
+	</p>
+</form>
+	
+	
+	
+	
+<form...>
+	<fieldset>																--> Encadré pour séquencer le questionnaire
+	<legend>Vos coordonnées</legend>										--> Titre de chaque sous-partie
+	<label>...</label>
+	<input... />
+	</fieldset>
+</form>
+
+
+
+
+
+<input type="text" name="prénom" id="prénom" autofocus />					--> Curseur par défaut dans le champ prénom
+<input type="text" name="prénom" id="prénom" required />					--> Champ obligatoire
+:required {background: red;}
+
+:required 																	--> Change le style d'un champ requis
+:invalid 																	--> Change le style d'un champ invalide
+:focus 																		--> Change le style d'un champ lorsque le curseur est à l'intérieur
+
+
+
+
+
+<input type="submit" value="Envoyer" />
+<input type="reset" value="Réinitialiser" />
+<input type="image" value="" />
+<input type="button" value="" />
+
+
+
+
+
+@media (min-width: 800) and (max-width: 1200px)								--> Responsive
+{
+	#p1 {
+		width: 80%;
+	}
+	#p2 {
+		width: 150px;
+		height: 150px;
+	}
+}

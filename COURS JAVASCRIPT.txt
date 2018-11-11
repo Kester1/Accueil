@@ -1,0 +1,146 @@
+<script></script>
+
+ALERTES, VARIABLES, OUTILS BASIQUES
+alert("Ce site contient des cookies")					--> Affiche une pop-up avec ce message
+var nom 												--> Créer une variable qui s'appelle "nom"
+Ex: var score = 10;
+	alert(score);										--> Affiche "10" en pop-up
+
+	prompt("Quel est votre nom ?");						--> Poser une question, obtenir une réponse
+Ex: var nom = prompt ("Quel est votre nom ?");
+
+var monPrenom = "Kester";
+var monNom = "KAÇA";
+var monNomComplet = monPrenom + " " + monNom
+alert("monNomComplet");									--> Afficher plusieurs variables en pop-up
+
+var monPrenom = "Kester";
+monPrenom.length	
+6														--> "Kester" contient 6 caractères
+monPrenom.toUpperCase()
+KESTER													--> Affiche en majuscules
+monPrenom.toLocaleLowerCase()
+Kester													--> Affiche en minuscules
+var position = monPrenom.indexOf("t");
+position
+3														--> Affiche le lieu des mots recherchés en nombre de caractères
+if(monPrenom.indexOf("a") == -1) alert("Inexistant")	--> Fonction si (si le résultat n'existe pas, le résultat affiché sera -1)
+
+var phrase = "Bonjour tout le monde"
+var mot = phrase.slice(8, 12);
+mot
+"tout"													--> Affiche le mot concerné, allant du caractère 7 (car le 1er caractère vaut 0) au caractère 11 (car le 12 ne compte pas)
+phrase.substr(8, 4)
+"tout"													--> Pareil, mais on entre une position de départ et une longueur au lieu d'une position de fin
+
+var score1 = 10, score2 = "10"							--> Définir 2 variables
+
+
+
+
+
+FONCTIONS MATH
+10 % 3
+1														--> 10 modulo 3 = 1
+Math.round(12.4)
+12														--> Arrondie au plus proche
+Math.ceil(12.22)
+13	
+Math.pow(2, 3)
+8														--> 2 au cube
+Math.sqrt(4)
+2														--> Racine carrée
+Math.random
+0.25795454												--> Crée un nombre aléatoire entre 0 (inclus) et 1 (exclus)
+Math.max(2,3,4,5)
+5														--> Affiche la variable la plus grande
+Math.min(2,3,4,5)
+2														--> Affiche la variable la plus petite
+Math.PI
+3.141592653589793										--> Prend la valeur de PI													--> Arrondie l'entier au suppérieur
+
+null --> absence d'une valeur
+undefined --> variable non initialisée (n'existe pas)
+NaN --> Not a Number (le résultat n'est pas un nombre)
+VariableA === Variable B
+false													--> Les variables A et B n'ont pas la même valeur
+falsy values (those that return "false" when one writes Boolean("...");) are false, null, undefined, NaN, but also "" and 0.
+
+//Commentaire monoligne
+/* Commentaire multilignes */
+
+console.log(nomVariable);								--> Affiche un résultat dans la console et non dans une boîte d'alerte
+var score = 10;
+++score													--> Ajoute 1 (soit 11) et prend la priorité de calcul
+score++													--> Ajoute 1 (soit 11) mais ne prend pas de priorité de calcul quelconque
+--score & score--										--> Pareil pour les soustractions
+a += b;													--> Raccourci pour a + b (car a + b crée une variable temporaire pour le résultat a)
+a -= b;
+a *= b;
+a /= b;
+
+parseInt(nomVariable)									--> Traduit des "strings" en "values" pour permettre le calcul
+parseFloat(nomVariable)									--> Pareil pour les nombres décimaux
+
+= Affecter
+== Être égal 
+=== Comparer (égalité stricte: même valeur ET même type de donnée --> identique) --> conseillé d'utiliser tout le temps
+!= Non égal, différend
+!==
+!===
+>
+<
+>=
+<=
+&& 														--> ET (inter)
+||														--> OU (union)
+!														--> "Si ce n'est pas vrai" if (!score) { score = 10; } alert("score");
+
+
+
+
+
+
+FONCTION IF
+var score = 10;
+if (score === 10) {
+	alert("Oui");
+}
+
+function signe (a) {
+    if (a < 0) {										--> 1 x if
+        return "Negative";
+    } else if (a > 0) {									--> Autant de else if qu'on veut
+            return "Positive";
+    } else {											--> 1 x else
+        return "0";
+    }
+}
+
+
+
+
+
+FONCTION SWITCH
+switch (score) {										--> Permet de tester différents résultats, pour alléger une fonction IF
+	case 10:
+		alert ("1e condition remplie"); break;			--> Sans le break, les réponses retenues sont la bonne et toutes les suivantes
+	case 11:
+		alert ("2e condition remplie"); break;
+	case 12:
+		alert ("3e condition remplie"); break;
+	case 13:
+	case 14:
+	case 15:											--> Plusieurs valeurs remplissent une même condition
+		alert ("4e condition remplie"); break;
+	default:
+		alert("Aucune condition n'est remplie")
+
+var reponse = window.prompt ("Tapez quelque chose, puis cliquez sur OK");
+switch(true){
+	case reponse.length < 3 :
+		alert("La longueur de votre réponse est inférieur à trois"); break;
+	case reponse.length === 3 :
+		alert("La longueur de votre réponse est égale à trois"); break;
+	default:
+		alert("La longueur de votre réponse est suppérieur à trois")
